@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>To do list</title>
+  </head>
+  <body onload="clock()">
+    <main class="mainContainer">
+      <div class="currentDay">To Do List<span>Completed Task: <strong class="completedTask"></strong></span></div>
+      <div class="dateMonth">
+        <span class="dayMonth"></span>
+      </div>
+      <div class="toDoAdd">
+        <div class="AddText"> <input type="text" class="addList">
+          <button class="addButton">ADD</button>
+        </div>
+        <span class="addingNote">Add Notes</span>
+        <textarea class="description"></textarea>
+      </div>
+      <div class="pinTopDiv"><span class="numberPinned"> Pinned: <span class="numberOfPins"></span></span></div>
+      <section class="ListOfWork">
+      </section>
+      <div class="addMark"><i class="fa-regular fa-plus"></i></div>
+    </main>
+  </body>
+
+</html>
+            

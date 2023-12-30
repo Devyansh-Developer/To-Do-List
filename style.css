@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: 'Play', sans-serif;
+  box-sizing: border-box;
+}
+
+:root{
+    ---commonColor:#B799FF;
+}
+
+body {
+  overflow: hidden;
+  background-color: var(---commonColor);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.mainContainer {
+  width: 40%;
+  height: 97vh;
+  background-color: #191825;
+  padding: 10px;
+  border-radius: 6px;
+  position: relative;
+}
+
+.currentDay {
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid  var(---commonColor);
+}
+
+.dateMonth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bolder;
+  height: 45px;
+}
+
+.toDoAdd {
+  background-color: #20262E;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: auto;
+  padding: 10px;
+  padding-bottom: 20px;
+  flex-direction: column;
+  border-radius: 8px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: none;
+  z-index: 1;
+}
+
+.toDoAdd.transition {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.AddText {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  gap: 10px;
+}
+
+.addList {
+  width: 75%;
+  padding: 5px;
+  border-radius: 8px;
+  background-color: #20262E;
+  border: 1px solid  var(---commonColor);
+  color: white;
+}
+
+.addList:focus {
+  outline: none;
+}
+
+.addButton {
+  padding: 7px 30px;
+  border-radius: 45px;
+  background-color:  var(---commonColor);
+  border: 1px solid rgba(255, 255, 255, 0.474);
+  color: white;
+}
+
+.description {
+  width: 100%;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #20262E;
+  border: 1px solid  var(---commonColor);
+  color: white;
+  height: 40px;
+}
+
+.description:focus {
+  outline: none;
+}
+
+.ListOfWork {
+  height: 79%;
+  width: 100%;
+  overflow-y: scroll;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.ListOfWork::-webkit-scrollbar,
+.pinTopDiv::-webkit-scrollbar {
+  width: 0px;
+}
+
+.taskActive {
+  position: relative;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  background-color: #20262E;
+  margin-top: 2px;
+  padding: 1px 0px;
+}
+
+.taskActive h2:focus,
+.taskActive div:focus {
+  outline: none;
+}
+
+.editing {
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 40px;
+}
+
+.editAllText {
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  width: 100px;
+  height: auto;
+  background-color: #20262E;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 4px;
+  padding: 5px;
+  flex-direction: column;
+  border-radius: 6px;
+  visibility: hidden;
+  z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.405);
+}
+
+.editing:hover .editAllText {
+  visibility: visible;
+}
+
+.TextAdded,
+.descriptionAdded {
+  font-size: 20px;
+  padding: 2px;
+  width: 85%;
+  border-radius: 6px;
+  margin: 0px;
+  margin-left: 25px;
+}
+
+.descriptionAdded {
+  font-size: 15px;
+  margin-top: 2px;
+  /* display: none; */
+}
+
+/* .descriptionAdded.active {
+  display: block;
+} */
+
+.editAllText button {
+  width: 100%;
+  padding: 3px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color:  var(---commonColor);
+  border: 0px;
+  color: white;
+}
+
+button:hover {
+  background-color:  var(---commonColor);
+  transition: 0.5s;
+  opacity: 0.7;
+}
+
+.taskDone {
+  position: absolute;
+  left: 6px;
+  top: 10px;
+  cursor: pointer;
+}
+
+.taskDone[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  outline: none;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.taskDone[type="checkbox"]:checked {
+  background-color:  var(---commonColor);
+  border-color: white;
+}
+
+.pinTopDiv {
+  width: 100%;
+  max-height: 100px;
+  margin-top: 18px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid  var(---commonColor);
+  overflow-y: scroll;
+  position: relative;
+  padding: 5px ;
+}
+
+.description,
+.addingNote {
+  display: none;
+}
+
+@media (max-width:700px) {
+  .mainContainer {
+    width: 97%;
+  }
+}
+
+.numberPinned {
+  padding: 4px;
+  border-radius: 6px;
+  background-color:  var(---commonColor);
+  font-size: 13px;
+  position: fixed;
+  top: 80px;
+}
+
+.addMark {
+  font-size: 35px;
+  width: 45px;
+  height: 45px;
+  background-color:  var(---commonColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 25px;
+  margin: auto;
+  cursor: pointer;
+  animation: addCircle infinite 0.5s ease-in-out alternate;
+}
+
+@keyframes addCircle {
+  to {
+    box-shadow: 0px 0px 0px 8px #b899ff88;
+  }
+
+  from {
+    box-shadow: 0px 0px 0px 8px #b899ff4d;
+  }
+}
